@@ -10,21 +10,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #Installing edld652 data package
 #install.packages("remotes")
-library(remotes)
+#library(remotes)
 remotes::install_github("datalorax/edld652", force = TRUE)
-library(edld652)
-list_datasets()
+#library(edld652)
+#list_datasets()
 
-acgd <- get_data("EDFacts_acgr_lea_2011_2019")
+#acgd <- get_data("EDFacts_acgr_lea_2011_2019")
 
-set_key('emilyabcdef')
+#set_key('emilyabcdef')
 
 ```
 
 ```{r}
 library(edld652)
 
-set_key('aden1234')
+#set_key('aden1234')
 
 list_datasets()
 
