@@ -42,8 +42,30 @@ acgdd <- get_documentation("EDFacts_acgr_lea_2011_2019")
 ```{r}
 library(here)
 library(rio)
+library(ggplot2)
 df<-import(here("data/rstats_tweets.rds"))
 
+df %>% 
+  ggplot(aes(x= display_text_width))+
+  geom_histogram(bins=30)
+
+df %>% 
+  ggplot(aes(x= display_text_width))+
+  geom_histogram(bins=10)
+
+df %>% 
+  ggplot(aes(x= display_text_width))+
+  geom_histogram(bins=100)
+
+df %>% 
+  ggplot(aes(x= display_text_width))+
+  geom_histogram(bins=500)
+
+```
+
+We are using 30 bins which is what R automatically selects, we think this gives the clearest pattern without being overwhelming. 
+
+```{r}
 
 
 ```
