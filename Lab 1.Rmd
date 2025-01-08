@@ -7,6 +7,18 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+#Installing edld652 data package
+#install.packages("remotes")
+library(remotes)
+remotes::install_github("datalorax/edld652", force = TRUE)
+library(edld652)
+list_datasets()
+
+acgd <- get_data("EDFacts_acgr_lea_2011_2019")
+
+set_key('emilyabcdef')
+
 ```
 
 ```{r}
