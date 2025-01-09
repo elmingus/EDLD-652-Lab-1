@@ -1,14 +1,22 @@
 ---
+output:
+  pdf_document: default
+  html_document: default
+---
+---
 title: "Lab 1 v3"
 author: "Emily Mingus, Aden Bhagwat, Erick Njue"
 date: "2025-01-08"
 output:
-  html_document:
-    df_print: paged
+  pdf_document:
+    keep_tex: true
+output_dir: "~/Desktop/Lab 1 v3"
+
   ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
 #Installing edld652 data package
 #install.packages("remotes")
 #library(remotes)
