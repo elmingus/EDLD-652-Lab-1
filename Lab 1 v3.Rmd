@@ -1,5 +1,5 @@
 ---
-title: "Lab 1 v2"
+title: "Lab 1 v3"
 author: "Emily Mingus, Aden Bhagwat, Erick Njue"
 date: "2025-01-08"
 output:
