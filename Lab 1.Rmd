@@ -37,6 +37,9 @@ acgd <- get_data("EDFacts_acgr_lea_2011_2019")
 
 acgdd <- get_documentation("EDFacts_acgr_lea_2011_2019")
 
+#list_datasets()
+#NOT WORKING
+
 ```
 
 ```{r}
@@ -66,6 +69,34 @@ df %>%
 We are using 30 bins which is what R automatically selects, we think this gives the clearest pattern without being overwhelming. 
 
 ```{r}
+df$text
+
+n_plot <- sum(grepl("plot", tolower(df$text))) 
+
+n_plot/nrow(df)
+  
+```
+
+6.8% of the posts contain the word plot
+
+```{r}
+library(tidytext)
+df_text <- df %>% 
+  unnest_tokens(word, description)
+
+
+df_text
+
+df_text %>% 
+  anti_join(stop_words) %>%
+  filter(!word %in% c("t.co", "https", "http", "rt", "rstats")) %>%
+  count(word, sort = TRUE) %>% 
+  mutate(word = reorder(word, n)) %>% # make y-axis ordered by n
+  slice(1:15) %>% # select only the first 15 rows
+  ggplot(aes(n, word)) +
+    geom_col(fill = "cornflowerblue")+
+  theme_minimal()+
+  labs(x="Count", y="Word", title="Word frequencies in posts", subtitle= "Top 15 words displayed", caption= "Data from Mike Kearny, distributed via #tidytuesday")
 
 
 ```
