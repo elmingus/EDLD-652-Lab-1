@@ -1,9 +1,8 @@
 ---
-title: "Lab-1"
+title: "Lab 1"
 author: "Emily Mingus, Aden Bhagwat, Erick Njue"
 date: "2025-01-08"
-output:
-  pdf_document: default
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -85,6 +84,8 @@ library(tidytext)
 df_text <- df %>% 
   unnest_tokens(word, description)
 
+
+df_text
 
 df_text %>% 
   anti_join(stop_words) %>%
