@@ -1,5 +1,5 @@
 ---
-title: "Lab 1"
+title: "Lab 1 v2"
 author: "Emily Mingus, Aden Bhagwat, Erick Njue"
 date: "2025-01-08"
 output:
@@ -70,8 +70,6 @@ df %>%
 We are using 30 bins which is what R automatically selects, we think this gives the clearest pattern without being overwhelming. 
 
 ```{r}
-df$text
-
 n_plot <- sum(grepl("plot", tolower(df$text))) 
 
 n_plot/nrow(df)
